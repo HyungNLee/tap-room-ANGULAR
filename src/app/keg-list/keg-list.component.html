@@ -1,0 +1,23 @@
+<app-keg-sale-list [childKegList]="childKegList"></app-keg-sale-list>
+
+<h2>Kegs NOT on Sale </h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Price</th>
+      <th scope="col">AL%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let currentKeg of childKegList | isOnSale: true; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{currentKeg.name}}</td>
+      <td>{{currentKeg.brand}}</td>
+      <td>${{currentKeg.price}}</td>
+      <td>{{currentKeg.alcoholContent}}%</td>
+    </tr>
+  </tbody>
+</table>

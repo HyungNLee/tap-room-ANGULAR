@@ -1,0 +1,13 @@
+.card {
+    margin: 25px;
+    background: rgba(0, 0, 0, 0.55);
+    border: darkgray 1px solid;
+    padding: 2%;
+}
+
+ul, li {
+    background: rgba(0, 0, 170, 0.15);
+    padding: 2%;  
+    color: white;
+    text-align: center;
+}
