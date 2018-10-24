@@ -15,9 +15,9 @@ export class AppComponent {
     new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, false),
     new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, false),            
     new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, false),
-    new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, false),
-    new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, false),
-    new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, false),    
+    new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, true),
+    new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, true),
+    new Keg("Summer Honey Wheat", "Blue Moon", 2.75, 5.2, true),    
     new Keg("Pale Lager", "Bia Hanoi", .25, 4.2, true)
   ];
 }
