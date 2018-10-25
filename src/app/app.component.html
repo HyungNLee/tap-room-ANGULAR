@@ -1,4 +1,43 @@
 <h1>Welcome to the Tap Room</h1>
 
 <p>Insert Content here</p>
-<app-keg-list [childKegList]="masterKegList"></app-keg-list>
+<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
+<button (click)="showAddForm()" class="btn btn-success">Add New Keg</button>
+
+<div *ngIf="newKeg" class="edit-form">
+  <h3>Edit Keg Information</h3>
+  <label>Name:</label>
+  <input [(ngModel)]="newKeg.name"><br>
+  <label>Brand:</label>
+  <input [(ngModel)]="newKeg.brand"><br>
+  <label>Price:</label>
+  <input [(ngModel)]="newKeg.price"><br>
+  <label>Alcohol Content:</label>
+  <input [(ngModel)]="newKeg.alcoholContent"><br>
+  <label>Pints Left: </label>
+  <input [(ngModel)]="newKeg.amount"><br>
+  <label>On Sale: </label>
+  <button class="btn btn-info" (click)="newKeg.changeOnSale(true)">True</button>
+  <button class="btn btn-warning" (click)="newKeg.changeOnSale(false)">False</button>
+  <br>
+  <button (click)="addKeg()">Done</button>
+</div>
+
+<div *ngIf="selectedKeg" class="edit-form">
+  <h3>Edit Keg Information</h3>
+  <label>Name:</label>
+  <input [(ngModel)]="selectedKeg.name"><br>
+  <label>Brand:</label>
+  <input [(ngModel)]="selectedKeg.brand"><br>
+  <label>Price:</label>
+  <input [(ngModel)]="selectedKeg.price"><br>
+  <label>Alcohol Content:</label>
+  <input [(ngModel)]="selectedKeg.alcoholContent"><br>
+  <label>Pints Left: </label>
+  <input [(ngModel)]="selectedKeg.amount"><br>
+  <label>On Sale: {{selectedKeg.onSale}}</label>
+  <button class="btn btn-info" (click)="selectedKeg.changeOnSale(true)">True</button>
+  <button class="btn btn-warning" (click)="selectedKeg.changeOnSale(false)">False</button>
+  <br>
+  <button (click)="finishEditing()">Done</button>
+</div>

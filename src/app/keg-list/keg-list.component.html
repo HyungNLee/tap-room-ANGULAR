@@ -9,15 +9,17 @@
       <th scope="col">Brand</th>
       <th scope="col">Price</th>
       <th scope="col">AL%</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let currentKeg of childKegList | isOnSale: true; let i = index">
+    <tr *ngFor="let currentKeg of childKegList | isOnSale: false; let i = index">
       <th scope="row">{{i+1}}</th>
       <td>{{currentKeg.name}}</td>
       <td>{{currentKeg.brand}}</td>
       <td>${{currentKeg.price}}</td>
       <td>{{currentKeg.alcoholContent}}%</td>
+      <td><button (click)="editButtonClicked(currentKeg)">Edit</button></td>
     </tr>
   </tbody>
 </table>
