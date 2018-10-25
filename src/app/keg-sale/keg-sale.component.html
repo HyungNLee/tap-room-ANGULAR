@@ -5,11 +5,11 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Brand: {{childKeg.brand}}</li>
-    <li class="list-group-item">Price: ${{childKeg.price}}</li>
-    <li class="list-group-item">AC%: {{childKeg.alcoholContent}}%</li>
+    <li class="list-group-item">Price: {{childKeg.price | currency: 'USD': true: '1.2-2'}}</li>
+    <li class="list-group-item">AC%: {{childKeg.alcoholContent | percent: '1.1-2'}}</li>
     <li class="list-group-item">Pints: {{childKeg.amount}}</li>
-    <li class="list-group">More</li>
-    </ul>
+    <li class="list-group">Tapped: {{childKeg.tappedDate | date: 'd - mm/dd'}}</li>
+  </ul>
   <div class="card-body">
     <button class="btn card-link">Sell/Buy Link</button>
   </div>

@@ -2,3 +2,8 @@ h1 {
     color: white;
     text-align: center;
 }
+
+.edit-form {
+  border: 1px solid white;
+  color: white;
+}
