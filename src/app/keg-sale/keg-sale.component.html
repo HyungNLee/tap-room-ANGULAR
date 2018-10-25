@@ -1,16 +1,25 @@
 <div class="card" style="width: 18rem">
-  <img class="card-img-top" src="http://www.stickpng.com/assets/images/595e5a8070308b1a215b70cc.png" alt="keg picture">
-  <div class="card-body">
-    <h5 class="card-title">{{childKeg.name}}</h5>
+    
+    <div>
+      <img class="card-img-top" src="http://www.stickpng.com/assets/images/595e5a8070308b1a215b70cc.png" alt="keg picture">
+      <div class="progress vertical">
+        <span class='progress-value'>{{childKeg.amount}}</span>
+        <div [class]="'progress-bar progress-bar-striped progress-bar-animated ' + progressBarClass(childKeg)" role="progressbar" [style.aria-valuenow]="childKeg.amount" aria-valuemin="0" aria-valuemax="124" [style.width]="childKeg.amount/124 * 100 + '%'">
+        </div>  
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{childKeg.name}}</h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Brand: {{childKeg.brand}}</li>
     <li class="list-group-item">Price: {{childKeg.price | currency: 'USD': true: '1.2-2'}}</li>
     <li class="list-group-item">AC%: {{childKeg.alcoholContent | percent: '1.1-2'}}</li>
     <li class="list-group-item">Pints: {{childKeg.amount}}</li>
-    <li class="list-group">Tapped: {{childKeg.tappedDate | date: 'd - mm/dd'}}</li>
+    <li class="list-group-item">Tapped: {{childKeg.tappedDate | date: 'MM/d/yy'}}</li>
   </ul>
   <div class="card-body">
-    <button class="btn card-link">Sell/Buy Link</button>
+    <button class="btn card-link" (click)="sellKeg(childKeg)">Sell Pint</button>
+    <button class="btn" (click)="editKeg(childKeg)">Edit Keg</button>
   </div>
 </div>

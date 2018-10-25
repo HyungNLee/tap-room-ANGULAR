@@ -1,4 +1,4 @@
-<app-keg-sale-list [childKegList]="childKegList"></app-keg-sale-list>
+<app-keg-sale-list [childKegList]="childKegList" (clickSender)="editButtonClicked($event)" (sellSender)="sellButtonClicked($event)"></app-keg-sale-list>
 
 <h2>Kegs NOT on Sale </h2>
 <table class="table">
@@ -9,6 +9,8 @@
       <th scope="col">Brand</th>
       <th scope="col">Price</th>
       <th scope="col">AL%</th>
+      <th scope='col'>Remaining</th>
+      <th scope='col'>Sell</th>
       <th scope="col">Edit</th>
     </tr>
   </thead>
@@ -17,8 +19,17 @@
       <th scope="row">{{i+1}}</th>
       <td>{{currentKeg.name}}</td>
       <td>{{currentKeg.brand}}</td>
-      <td>${{currentKeg.price}}</td>
-      <td>{{currentKeg.alcoholContent}}%</td>
+      <td>{{currentKeg.price| currency: 'USD': true: '1.2-2'}}</td>
+      <td>{{currentKeg.alcoholContent | percent: '1.1-2'}}</td>
+      <td>
+        <div class="progress">
+          <span class='progress-value'>{{currentKeg.amount}} pints</span>
+          <div [class]="'progress-bar progress-bar-striped progress-bar-animated ' + progressBarClass(currentKeg)" role="progressbar"
+            [style.aria-valuenow]="currentKeg.amount" aria-valuemin="0" aria-valuemax="124" [style.width]="currentKeg.amount/124 * 100 + '%'">
+          </div>
+        </div>
+      </td>
+      <td><button (click)="sellButtonClicked(currentKeg)">Sell</button></td>
       <td><button (click)="editButtonClicked(currentKeg)">Edit</button></td>
     </tr>
   </tbody>

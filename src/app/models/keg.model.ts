@@ -6,6 +6,10 @@ export class Keg {
     };
     changeOnSale(trueOrFalse: boolean): void {
         this.onSale = trueOrFalse;
-        console.log(this);
     };
+    sellPint() {
+        if (this.amount > 0) {
+            this.amount -= 1;
+        }
+    }
 }

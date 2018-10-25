@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model';
 @Component({
   selector: 'app-keg-sale',
@@ -7,8 +7,27 @@ import { Keg } from '../models/keg.model';
 })
 export class KegSaleComponent {
   @Input() childKeg: Keg;
+  @Output() clickSender = new EventEmitter();
+  @Output() sellSender = new EventEmitter();
 
-  
+  editKeg(kegToEdit) {
+    this.clickSender.emit(kegToEdit);
+  }
+  sellKeg(kegToEdit) {
+    this.sellSender.emit(kegToEdit);
+  }
+
+  progressBarClass(selectedKeg) {
+    if (selectedKeg.amount <= 10) {
+      return "bg-danger";
+    } else if (selectedKeg.amount <= 25) {
+      return "bg-warning";
+    } else if (selectedKeg.amount <= 99) {
+      return "bg-success";
+    } else if (selectedKeg.amount <= 124) {
+      return "bg-primary";
+    }
+  }
   // constructor() { }
 
   // ngOnInit() {

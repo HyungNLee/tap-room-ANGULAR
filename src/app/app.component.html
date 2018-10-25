@@ -1,11 +1,11 @@
 <h1>Welcome to the Tap Room</h1>
 
 <p>Insert Content here</p>
-<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
+<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (sellSender)="sellKeg($event)"></app-keg-list>
 <button (click)="showAddForm()" class="btn btn-success">Add New Keg</button>
 
 <div *ngIf="newKeg" class="edit-form">
-  <h3>Edit Keg Information</h3>
+  <h3>Add Keg Information</h3>
   <label>Name:</label>
   <input [(ngModel)]="newKeg.name"><br>
   <label>Brand:</label>
