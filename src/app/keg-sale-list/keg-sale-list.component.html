@@ -1,6 +1,6 @@
 <h2>Kegs on Sale  </h2>
 <div class="row">
-  <div *ngFor="let currentKeg of childKegList | isOnSale: false">
+  <div *ngFor="let currentKeg of childKegList | isOnSale: true">
     <app-keg-sale [childKeg]="currentKeg"></app-keg-sale>
   </div>
 </div>
