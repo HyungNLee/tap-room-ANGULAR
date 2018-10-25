@@ -1,0 +1,15 @@
+<div class="card" style="width: 8rem">
+    <div>
+      <img class="card-img-top" src="http://www.stickpng.com/assets/images/595e5a8070308b1a215b70cc.png" alt="keg picture">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{childKeg.name}}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{childKeg.brand}}</li>
+    <li class="list-group-item">Out Since: {{childKeg.outDate | date: 'shortTime'}}</li>
+  </ul>
+  <div class="card-body">
+    <button class="btn card-link" (click)="refill(childKeg)">Refill</button>
+  </div>
+</div>

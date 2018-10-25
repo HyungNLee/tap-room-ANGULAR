@@ -1,3 +1,8 @@
-<p>
-  keg-low-list works!
-</p>
+<div *ngIf="listLength()">
+  <h2>Kegs Out of Stock</h2>
+  <div class="row">
+    <div *ngFor="let currentKeg of childKegList | isEmpty">
+      <app-keg-out-unit [childKeg]="currentKeg" (refillSender)="refill($event)"></app-keg-out-unit>
+    </div>
+  </div>
+</div>

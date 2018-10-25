@@ -44,12 +44,13 @@ body {
 .progress-value {
     position:absolute;
     left:0;
+    height: 100%;
     width:100%;
     text-align:center;
     z-index:2;
     color:white;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     /* Safari */
     -webkit-transform: rotate(90deg);
     /* Firefox */

@@ -11,6 +11,7 @@ export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
   @Output() sellSender = new EventEmitter();
+  @Output() refillSender = new EventEmitter();
 
   editButtonClicked(kegToEdit) {
     this.clickSender.emit(kegToEdit);
@@ -18,6 +19,10 @@ export class KegListComponent {
 
   sellButtonClicked(currentKeg) {
     this.sellSender.emit(currentKeg);
+  }
+
+  refill(kegToRefill) {
+    this.refillSender.emit(kegToRefill);
   }
 
   progressBarClass(selectedKeg) {
@@ -31,4 +36,5 @@ export class KegListComponent {
       return "bg-primary";
     }
   }
+
 }

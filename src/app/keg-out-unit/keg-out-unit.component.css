@@ -1,0 +1,31 @@
+.card {
+    margin: 25px;
+    background: rgba(0, 0, 0, 0.55);
+    border: darkgray 1px solid;
+    padding: 2%;
+}
+
+ul, li, h5 {
+    background: rgba(0, 0, 90, 0.15);
+    padding: 2%;  
+    color: white;
+    text-align: center;
+}
+
+body {
+    background-color: #1D1F20;
+}
+
+.container {
+    margin-top: 40px;
+    padding-top: 20px;
+    /*background-color: #beb*/
+}
+.list-group {
+    margin-top: -75px;
+    margin-bottom: 120px;
+    /* display: inline-block; */
+    width: 100%;
+    height: 40px;
+}
+

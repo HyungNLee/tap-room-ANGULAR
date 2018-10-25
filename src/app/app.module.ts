@@ -8,7 +8,9 @@ import { KegListComponent } from './keg-list/keg-list.component';
 import { KegSaleComponent } from './keg-sale/keg-sale.component';
 import { KegSaleListComponent } from './keg-sale-list/keg-sale-list.component';
 import { IsOnSalePipe } from './isOnSale.pipe';
+import { IsEmptyPipe } from './isEmpty.pipe';
 import { KegLowListComponent } from './keg-low-list/keg-low-list.component';
+import { KegOutUnitComponent } from './keg-out-unit/keg-out-unit.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { KegLowListComponent } from './keg-low-list/keg-low-list.component';
     KegSaleComponent,
     KegSaleListComponent,
     IsOnSalePipe,
-    KegLowListComponent
+    KegLowListComponent,
+    IsEmptyPipe,
+    KegOutUnitComponent
   ],
   imports: [
     BrowserModule,

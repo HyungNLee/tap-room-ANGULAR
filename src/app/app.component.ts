@@ -10,7 +10,9 @@ export class AppComponent {
   masterKegList: Keg[] = [
     new Keg("Original White Ale", "Hoegaarden", 3.50, .049, false),
     new Keg("Summer Honey Wheat", "Blue Moon", 2.75, .052, false),          
-    new Keg("Pale Lager", "Bia Hanoi", .25, .042, true)
+    new Keg("Pale Lager", "Bia Hanoi", .25, .042, true),
+    new Keg("Bad Apple", "Two Town Ciderhouse", 4.25, .105, false),
+    new Keg("Pale Lager", "Heineken", 1.99, .050, true)
   ];
 
   selectedKeg: Keg = null;
@@ -38,4 +40,8 @@ export class AppComponent {
   sellKeg(currentKeg) {
     currentKeg.sellPint();
   }  
+
+  refill(kegToRefill) {
+    kegToRefill.editAmount(124);
+  }
 }

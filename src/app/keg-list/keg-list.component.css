@@ -1,5 +1,6 @@
 table, h2 {
     color: white;
+    text-align: center;
 }
 
 .progress {
@@ -15,3 +16,10 @@ table, h2 {
     color:white;
     font-weight: bold;
 }
+
+i {
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+

@@ -1,6 +1,7 @@
+<app-keg-low-list [childKegList]="childKegList" (refillSender)="refill($event)"></app-keg-low-list>
 <app-keg-sale-list [childKegList]="childKegList" (clickSender)="editButtonClicked($event)" (sellSender)="sellButtonClicked($event)"></app-keg-sale-list>
 
-<h2>Kegs NOT on Sale </h2>
+<h2>Kegs On Tap </h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -15,12 +16,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let currentKeg of childKegList | isOnSale: false; let i = index">
+    <tr *ngFor="let currentKeg of childKegList ; let i = index">
       <th scope="row">{{i+1}}</th>
       <td>{{currentKeg.name}}</td>
       <td>{{currentKeg.brand}}</td>
-      <td>{{currentKeg.price| currency: 'USD': true: '1.2-2'}}</td>
-      <td>{{currentKeg.alcoholContent | percent: '1.1-2'}}</td>
+      <td>{{currentKeg.price | currency: 'USD': true: '1.2-2'}}  <i class="fas fa-beer" *ngIf="currentKeg.onSale"></i></td>
+      <td>{{currentKeg.alcoholContent | percent: '1.1-2'}} <i class="fas fa-skull" *ngIf="currentKeg.alcoholContent >= .10"></i></td>
       <td>
         <div class="progress">
           <span class='progress-value'>{{currentKeg.amount}} pints</span>

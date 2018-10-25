@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model';
 @Component({
   selector: 'app-keg-sale',
@@ -28,9 +28,6 @@ export class KegSaleComponent {
       return "bg-primary";
     }
   }
-  // constructor() { }
 
-  // ngOnInit() {
-  // }
 
 }
