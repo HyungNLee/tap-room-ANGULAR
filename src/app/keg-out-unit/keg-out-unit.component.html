@@ -1,6 +1,6 @@
-<div class="card" style="width: 8rem">
+<div class="card" style="width: 10rem">
     <div>
-      <img class="card-img-top" src="http://www.stickpng.com/assets/images/595e5a8070308b1a215b70cc.png" alt="keg picture">
+      <img class="card-img-top" src="https://static.thenounproject.com/png/1397707-200.png" alt="keg picture">
     </div>
     <div class="card-body">
       <h5 class="card-title">{{childKeg.name}}</h5>
@@ -10,6 +10,6 @@
     <li class="list-group-item">Out Since: {{childKeg.outDate | date: 'shortTime'}}</li>
   </ul>
   <div class="card-body">
-    <button class="btn card-link" (click)="refill(childKeg)">Refill</button>
+    <button class="btn" (click)="refill(childKeg)">Refill</button>
   </div>
 </div>
